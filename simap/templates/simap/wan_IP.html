@@ -1,0 +1,99 @@
+{% extends 'simap/base.html' %}
+{% load staticfiles %}
+{% block content %}
+ <div class="content-wrapper">
+     <div class="container-fluid">
+
+         <ol class="breadcrumb">
+             <li class="breadcrumb-item">
+                 <a href="#">WAN</a>
+             </li>
+             <li class="breadcrumb-item active">IP 설정 및 조회</li>
+         </ol>
+
+      <!-- Breadcrumbs-->
+      <!-- Icon <Cards--><br>
+      <div class="card mb-3" style="width:600px; margin: 0 auto;">
+                    <div class="card-header">
+                      <i class="fa fa-bar-chart"></i> IP 설정 및 조회</div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div style = "width:500px; margin: 0 auto;">
+                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            &emsp;&emsp;&emsp;
+                             <label class="radio-inline">
+                              <input type="radio" name="optradio" value="passive" checked="checked">수동
+                            </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <label class="radio-inline">
+                              <input type="radio" name="optradio" value="auto">자동
+                            </label>
+                      <br class="form-group">
+                      <label>로컬 IP주소</label>
+                      <input id="local_ip" type="text" id="radiocheck1" class="form-control"  placeholder="..." />
+                      <br>
+                      <label>실제 IP주소</label>
+                      <input id="wan_ip" type="text" id="radiocheck4" class="form-control"  placeholder="..." readonly/>
+                      <br>
+                      <label>Net Mask</label>
+                      <input id = "wan_net"type="text" id="radiocheck2" class="form-control" placeholder="..." readonly/>
+                      <br>
+                      <label>Gateway</label>
+                      <input id = "wan_gate" type="text" id="radiocheck3" class="form-control"  placeholder="..." readonly/>
+                      <br>
+                      <button id="good" type="submit" class="btn btn-default" style="float: right;">적용</button>
+                      <br>
+                  </div>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          </div>
+
+     </div>
+   <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src='{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+    <!-- Core plugin JavaScript-->
+    <script src='{% static "vendor/jquery-easing/jquery.easing.min.js" %}'></script>
+    <!-- Page level plugin JavaScript-->
+    <script src='{% static "vendor/datatables/jquery.dataTables.js" %}'></script>
+    <script src='{% static "vendor/datatables/dataTables.bootstrap4.js" %}'></script>
+    <!-- Custom scripts for all pages-->
+    <script src='{% static "js/sb-admin.min.js" %}'></script>
+    <!-- Custom scripts for this page-->
+    <script src='{% static "js/sb-admin-datatables.min.js" %}'></script>
+    <script src='{% static "js/cpu_ram.js" %}'></script>
+    <script src='{% static "js/wan_IP.js" %}'></script>
+
+</body>
+</html>
+{% endblock %}

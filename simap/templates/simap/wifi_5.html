@@ -1,0 +1,126 @@
+{% extends 'simap/base.html' %}
+{% load staticfiles %}
+{% block content %}
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="index.html">Wifi</a>
+        </li>
+        <li class="breadcrumb-item active">5G</li>
+      </ol>
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-cogs"></i> Wifi 설정</div>
+        <br class="card-body">
+
+      <div style = "width:600px; margin: 0 auto;">
+
+          <label>SSID</label>
+          <input id="5_ssid" type="text" class="form-control"  value="..." />
+
+          <label style="margin-top:25px;">채널</label>
+          <select class="form-control" id="5_dropbox">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+
+          <button id="5_button" type="submit" class="btn btn-default" style="float: right; margin:20px 0px 23px 100px;">조회</button>
+
+      </div>
+
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> 기기목록</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>순번</th>
+                  <th>IP</th>
+                  <th>MAC</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>순번</th>
+                  <th>IP</th>
+                  <th>MAC</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <td>Tiger Nixon</td>
+                  <td>1000</td>
+                  <td>1000</td>
+                </tr>
+                <tr>
+                  <td>Tiger Nixon</td>
+                  <td>1000</td>
+                  <td>1000</td>
+                </tr>
+                <tr>
+                  <td>Tiger Nixon</td>
+                  <td>1000</td>
+                  <td>1000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+       <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © Your Website 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src='{% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}'></script>
+    <!-- Core plugin JavaScript-->
+    <script src='{% static "vendor/jquery-easing/jquery.easing.min.js" %}'></script>
+    <!-- Page level plugin JavaScript-->
+    <script src='{% static "vendor/datatables/jquery.dataTables.js" %}'></script>
+    <script src='{% static "vendor/datatables/dataTables.bootstrap4.js" %}'></script>
+    <!-- Custom scripts for all pages-->
+    <script src='{% static "js/sb-admin.min.js" %}'></script>
+    <!-- Custom scripts for this page-->
+    <script src='{% static "js/sb-admin-datatables.min.js" %}'></script>
+<script src='{% static "js/cpu_ram.js" %}'></script>
+
+</body>
+</html>
+{% endblock %}
