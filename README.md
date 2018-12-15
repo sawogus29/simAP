@@ -1,6 +1,8 @@
 일단 이렇게 하면 될 겁니다. 
 
 1. 파이썬 가상환경 생성
+(pip이 없는 경우에만 > sudo apt install python3-pip)
+(venv가 없는 경우에만  > sudo apt install python3-venv)
 > python3 -m venv myvenv
 
 2. Virtual Envirionment가 실행
