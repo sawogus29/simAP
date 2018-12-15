@@ -30,6 +30,7 @@ def get_ip_address():
     s.connect(("8.8.8.8", 80))
     return s.getsockname()[0]
 '''
+'''
 print('register to cAPC')
 deviceField = {
     "id": '0',
@@ -59,7 +60,7 @@ print(res_dic)
 
 deviceField = res_dic['devices']
 print(deviceField, '\n\n\n-------------')
-
+'''
 
 
 '''

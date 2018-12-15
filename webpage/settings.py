@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'simap.apps.SimapConfig',
     'simap_rest',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
