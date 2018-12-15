@@ -1,8 +1,22 @@
 from django.shortcuts import render
 from django.views import View
 from . import models
+from . import serializers
+from rest_framework import generics
+from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer
 from django.http import JsonResponse
 
+class MyJSONRenderer(JSONRenderer):
+    def render(self, data, *args, **kwargs):
+        header = header = HeaderFactory.getHeader(200, 'Success - ', True)
+        data.update(header)
+        return super().render(data, *args, **kwargs)
+
+class MyBrowsableAPIRenderer(BrowsableAPIRenderer):
+    def render(self, data, *args, **kwargs):
+        header = header = HeaderFactory.getHeader(200, 'Success - ', True)
+        data.update(header)
+        return super().render(data, *args, **kwargs)
 
 class HeaderFactory:
 	def __init__(self):
@@ -31,6 +45,14 @@ class HealthCheck(View):
     	header = HeaderFactory.getHeader(200, 'Success - alive', True)
     	res = {**header}
     	return JsonResponse(res)
+
+class MyRetrieveAPIView(generics.RetrieveAPIView):
+    pass
+
+class HardwareInfoView(generics.RetrieveUpdateAPIView):
+    queryset = models.HardwareInfo.objects.all()
+    serializer_class = serializers.HardwareInfoSerializer
+    renderer_classes = (MyBrowsableAPIRenderer, MyJSONRenderer, )
 
 class SystemView(View):
     def post(self, request):
@@ -74,3 +96,11 @@ class ProvisioningView(View):
     def post(self, request):
         header = HeaderFactory.getHeader(200, 'Success - ', True)
         return JsonResponse(header)
+
+class WifiAnalyzerView(View):
+    def get(self, request):
+        wa = models.WifiAnalyzer()
+        data = wa.getScanData()
+        header = HeaderFactory.getHeader(200, 'Success - ', True)
+
+        return JsonResponse(data)
